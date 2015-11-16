@@ -1,12 +1,14 @@
 import sqlite3
-from flask import Flask, request, redirect, render_template, g
+from flask import Flask, request, redirect, render_template, g, jsonify, flash, url_for
 from contextlib import closing
+import datetime
 
 # configuration
 DATABASE = '/tmp/color.db'
 DEBUG = True
 
 app = Flask(__name__)
+app.secret_key = "compassion"
 app.config.from_object(__name__)
 
 def connect_db():
@@ -34,12 +36,21 @@ def home():
 
 @app.route('/add', methods=['POST'])
 def pick_color():
-	g.db.execute('insert into entries (uid, time, color) values (?, ?, ?)',
-		[request.form['uid'], request.form['time'], request.form['color']])
+	g.db.execute('insert into entries (uid, time, color, valence) values (?, ?, ?, ?)',
+		[request.form['uid'], str(datetime.datetime.now()), request.form['color'], request.form['valence']])
 	g.db.commit()
-	flash('Your choice was successfully saved. Thanks!')
+	# flash('Your choice was successfully saved. Thanks!')
 	return redirect(url_for('home'))
+
+@app.route('/colors', methods=['GET'])
+def get_tasks():
+    cur = g.db.execute('select * from entries')
+    entries = [{"id":row[0], "uid":row[1], "time":row[2], "color":row[3], "valence":row[4]} for row in cur.fetchall()]
+	# return db
+    return jsonify({'entries': entries})
 
 if __name__ == '__main__':
 	app.run()
+	connect_db()
+	init_db()
 

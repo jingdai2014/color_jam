@@ -127,6 +127,21 @@ form {
   margin: -10px;
 }
 
+#uid-input {
+    width: 250px;
+    float: right;
+}
+
+#sliders {
+    width: 50px;
+    float: left;
+}
+
+#slider-vertical {
+    width: 50px;
+    height: 590px;
+}
+
 input[type=submit] {
     background: #ECECEC;
     border-radius: 15px;

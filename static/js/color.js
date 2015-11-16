@@ -40,7 +40,22 @@ $('.colors > .color-group > div > .unsel').on({
       'z-index': '2'
     })
     $(this).off('mouseleave');
-    $('.color-text').text($(this).css("background-color"));
+    $('.color-text').val($(this).css("background-color"));
     $('.logo > img').css('background-color', $(this).css("background-color"))
-  }
+  },
+});
+
+$(function() {
+  $( "#slider-vertical" ).slider({
+    orientation: "vertical",
+    range: "min",
+    min: -100,
+    max: 100,
+    value: 0,
+    slide: function( event, ui ) {
+      $('.valence-val').val( ui.value );
+    }
+  });
+  $('.ui-slider-handle').css('width', '58px');
+  $('.valence-val').val($("#slider-vertical").slider("value"));
 });
