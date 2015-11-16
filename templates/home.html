@@ -1,244 +1,249 @@
 {% extends "layout.html" %}
 {% block body %}
 <div>
-	<h2>Color your mood.</h2>
-	<form action="/add" method="post">
-		<label>User id</label>
-		<input id="uid">
-		<hr class="space">
-		<label>Color</label>
-		<div id="color-table" class="color-table">
-			<div class="_group">
-				<div class="_tile" style="top: 0px; left: 0px; background-color: rgb(0, 0, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 0px; background-color: rgb(0, 51, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 0px; background-color: rgb(0, 102, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 0px; background-color: rgb(0, 153, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 0px; background-color: rgb(0, 204, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 0px; background-color: rgb(0, 255, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 19px; background-color: rgb(0, 0, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 19px; background-color: rgb(0, 51, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 19px; background-color: rgb(0, 102, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 19px; background-color: rgb(0, 153, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 19px; background-color: rgb(0, 204, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 19px; background-color: rgb(0, 255, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 38px; background-color: rgb(0, 0, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 38px; background-color: rgb(0, 51, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 38px; background-color: rgb(0, 102, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 38px; background-color: rgb(0, 153, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 38px; background-color: rgb(0, 204, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 38px; background-color: rgb(0, 255, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 57px; background-color: rgb(0, 0, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 57px; background-color: rgb(0, 51, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 57px; background-color: rgb(0, 102, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 57px; background-color: rgb(0, 153, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 57px; background-color: rgb(0, 204, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 57px; background-color: rgb(0, 255, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 76px; background-color: rgb(0, 0, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 76px; background-color: rgb(0, 51, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 76px; background-color: rgb(0, 102, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 76px; background-color: rgb(0, 153, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 76px; background-color: rgb(0, 204, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 76px; background-color: rgb(0, 255, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 95px; background-color: rgb(0, 0, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 95px; background-color: rgb(0, 51, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 95px; background-color: rgb(0, 102, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 95px; background-color: rgb(0, 153, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 95px; background-color: rgb(0, 204, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 95px; background-color: rgb(0, 255, 255);">&nbsp;</div>
+	<div class="title-text">ColorJam - Color your mood</div>
+	<form action="/add" method="post" class="form">
+		<div class="fields">
+			<label class="uid-title">User id</label>
+			</br>
+			<input class="uid-box">
+			</br>
+			<div class="color-text"></div>
+			</br></br></br>
+			<input class="btn primary color-submit" type="submit" value="Submit">
+			</br></br></br></br>
+			<img src="{{ url_for('static', filename='colla.png')}}" alt="Smiley face" height="300" width="300">
+		</div>
+		<div class="colors">
+			<div class="color-group">
+				<div><div class="unsel" style="background-color: rgb(0, 0, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 0, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 0, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 0, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 0, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 0, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 51, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 51, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 51, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 51, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 51, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 51, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 102, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 102, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 102, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 102, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 102, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 102, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 153, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 153, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 153, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 153, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 153, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 153, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 204, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 204, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 204, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 204, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 204, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 204, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 255, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 255, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 255, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 255, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 255, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(0, 255, 255);"></div></div>
 			</div>
-			<div class="_group">
-				<div class="_tile" style="top: 0px; left: 0px; background-color: rgb(51, 0, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 0px; background-color: rgb(51, 51, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 0px; background-color: rgb(51, 102, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 0px; background-color: rgb(51, 153, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 0px; background-color: rgb(51, 204, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 0px; background-color: rgb(51, 255, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 19px; background-color: rgb(51, 0, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 19px; background-color: rgb(51, 51, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 19px; background-color: rgb(51, 102, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 19px; background-color: rgb(51, 153, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 19px; background-color: rgb(51, 204, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 19px; background-color: rgb(51, 255, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 38px; background-color: rgb(51, 0, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 38px; background-color: rgb(51, 51, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 38px; background-color: rgb(51, 102, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 38px; background-color: rgb(51, 153, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 38px; background-color: rgb(51, 204, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 38px; background-color: rgb(51, 255, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 57px; background-color: rgb(51, 0, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 57px; background-color: rgb(51, 51, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 57px; background-color: rgb(51, 102, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 57px; background-color: rgb(51, 153, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 57px; background-color: rgb(51, 204, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 57px; background-color: rgb(51, 255, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 76px; background-color: rgb(51, 0, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 76px; background-color: rgb(51, 51, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 76px; background-color: rgb(51, 102, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 76px; background-color: rgb(51, 153, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 76px; background-color: rgb(51, 204, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 76px; background-color: rgb(51, 255, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 95px; background-color: rgb(51, 0, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 95px; background-color: rgb(51, 51, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 95px; background-color: rgb(51, 102, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 95px; background-color: rgb(51, 153, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 95px; background-color: rgb(51, 204, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 95px; background-color: rgb(51, 255, 255);">&nbsp;</div>
+			<div class="color-group">
+				<div><div class="unsel" style="background-color: rgb(51, 0, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 0, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 0, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 0, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 0, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 0, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 51, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 51, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 51, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 51, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 51, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 51, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 102, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 102, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 102, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 102, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 102, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 102, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 153, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 153, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 153, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 153, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 153, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 153, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 204, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 204, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 204, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 204, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 204, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 204, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 255, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 255, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 255, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 255, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 255, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(51, 255, 255);"></div></div>
 			</div>
-			<div class="_group">
-				<div class="_tile" style="top: 0px; left: 0px; background-color: rgb(102, 0, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 0px; background-color: rgb(102, 51, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 0px; background-color: rgb(102, 102, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 0px; background-color: rgb(102, 153, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 0px; background-color: rgb(102, 204, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 0px; background-color: rgb(102, 255, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 19px; background-color: rgb(102, 0, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 19px; background-color: rgb(102, 51, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 19px; background-color: rgb(102, 102, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 19px; background-color: rgb(102, 153, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 19px; background-color: rgb(102, 204, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 19px; background-color: rgb(102, 255, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 38px; background-color: rgb(102, 0, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 38px; background-color: rgb(102, 51, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 38px; background-color: rgb(102, 102, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 38px; background-color: rgb(102, 153, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 38px; background-color: rgb(102, 204, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 38px; background-color: rgb(102, 255, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 57px; background-color: rgb(102, 0, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 57px; background-color: rgb(102, 51, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 57px; background-color: rgb(102, 102, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 57px; background-color: rgb(102, 153, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 57px; background-color: rgb(102, 204, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 57px; background-color: rgb(102, 255, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 76px; background-color: rgb(102, 0, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 76px; background-color: rgb(102, 51, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 76px; background-color: rgb(102, 102, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 76px; background-color: rgb(102, 153, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 76px; background-color: rgb(102, 204, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 76px; background-color: rgb(102, 255, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 95px; background-color: rgb(102, 0, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 95px; background-color: rgb(102, 51, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 95px; background-color: rgb(102, 102, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 95px; background-color: rgb(102, 153, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 95px; background-color: rgb(102, 204, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 95px; background-color: rgb(102, 255, 255);">&nbsp;</div>
+			<div class="color-group">
+				<div><div class="unsel" style="background-color: rgb(102, 0, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 0, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 0, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 0, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 0, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 0, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 51, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 51, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 51, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 51, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 51, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 51, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 102, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 102, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 102, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 102, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 102, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 102, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 153, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 153, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 153, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 153, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 153, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 153, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 204, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 204, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 204, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 204, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 204, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 204, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 255, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 255, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 255, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 255, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 255, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(102, 255, 255);"></div></div>
+				</div>
+			<div class="color-group">
+				<div><div class="unsel" style="background-color: rgb(153, 0, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 0, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 0, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 0, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 0, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 0, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 51, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 51, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 51, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 51, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 51, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 51, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 102, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 102, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 102, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 102, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 102, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 102, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 153, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 153, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 153, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 153, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 153, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 153, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 204, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 204, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 204, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 204, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 204, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 204, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 255, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 255, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 255, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 255, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 255, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(153, 255, 255);"></div></div>
 			</div>
-			<div class="_group">
-				<div class="_tile" style="top: 0px; left: 0px; background-color: rgb(153, 0, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 0px; background-color: rgb(153, 51, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 0px; background-color: rgb(153, 102, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 0px; background-color: rgb(153, 153, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 0px; background-color: rgb(153, 204, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 0px; background-color: rgb(153, 255, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 19px; background-color: rgb(153, 0, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 19px; background-color: rgb(153, 51, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 19px; background-color: rgb(153, 102, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 19px; background-color: rgb(153, 153, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 19px; background-color: rgb(153, 204, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 19px; background-color: rgb(153, 255, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 38px; background-color: rgb(153, 0, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 38px; background-color: rgb(153, 51, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 38px; background-color: rgb(153, 102, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 38px; background-color: rgb(153, 153, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 38px; background-color: rgb(153, 204, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 38px; background-color: rgb(153, 255, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 57px; background-color: rgb(153, 0, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 57px; background-color: rgb(153, 51, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 57px; background-color: rgb(153, 102, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 57px; background-color: rgb(153, 153, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 57px; background-color: rgb(153, 204, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 57px; background-color: rgb(153, 255, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 76px; background-color: rgb(153, 0, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 76px; background-color: rgb(153, 51, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 76px; background-color: rgb(153, 102, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 76px; background-color: rgb(153, 153, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 76px; background-color: rgb(153, 204, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 76px; background-color: rgb(153, 255, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 95px; background-color: rgb(153, 0, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 95px; background-color: rgb(153, 51, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 95px; background-color: rgb(153, 102, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 95px; background-color: rgb(153, 153, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 95px; background-color: rgb(153, 204, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 95px; background-color: rgb(153, 255, 255);">&nbsp;</div>
+			<div class="color-group">
+				<div><div class="unsel" style="background-color: rgb(204, 0, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 0, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 0, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 0, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 0, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 0, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 51, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 51, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 51, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 51, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 51, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 51, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 102, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 102, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 102, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 102, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 102, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 102, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 153, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 153, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 153, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 153, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 153, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 153, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 204, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 204, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 204, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 204, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 204, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 204, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 255, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 255, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 255, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 255, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 255, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(204, 255, 255);"></div></div>
 			</div>
-			<div class="_group">
-				<div class="_tile" style="top: 0px; left: 0px; background-color: rgb(204, 0, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 0px; background-color: rgb(204, 51, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 0px; background-color: rgb(204, 102, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 0px; background-color: rgb(204, 153, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 0px; background-color: rgb(204, 204, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 0px; background-color: rgb(204, 255, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 19px; background-color: rgb(204, 0, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 19px; background-color: rgb(204, 51, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 19px; background-color: rgb(204, 102, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 19px; background-color: rgb(204, 153, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 19px; background-color: rgb(204, 204, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 19px; background-color: rgb(204, 255, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 38px; background-color: rgb(204, 0, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 38px; background-color: rgb(204, 51, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 38px; background-color: rgb(204, 102, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 38px; background-color: rgb(204, 153, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 38px; background-color: rgb(204, 204, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 38px; background-color: rgb(204, 255, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 57px; background-color: rgb(204, 0, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 57px; background-color: rgb(204, 51, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 57px; background-color: rgb(204, 102, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 57px; background-color: rgb(204, 153, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 57px; background-color: rgb(204, 204, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 57px; background-color: rgb(204, 255, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 76px; background-color: rgb(204, 0, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 76px; background-color: rgb(204, 51, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 76px; background-color: rgb(204, 102, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 76px; background-color: rgb(204, 153, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 76px; background-color: rgb(204, 204, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 76px; background-color: rgb(204, 255, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 95px; background-color: rgb(204, 0, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 95px; background-color: rgb(204, 51, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 95px; background-color: rgb(204, 102, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 95px; background-color: rgb(204, 153, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 95px; background-color: rgb(204, 204, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 95px; background-color: rgb(204, 255, 255);">&nbsp;</div>
-			</div>
-			<div class="_group">
-				<div class="_tile" style="top: 0px; left: 0px; background-color: rgb(255, 0, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 0px; background-color: rgb(255, 51, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 0px; background-color: rgb(255, 102, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 0px; background-color: rgb(255, 153, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 0px; background-color: rgb(255, 204, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 0px; background-color: rgb(255, 255, 0);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 19px; background-color: rgb(255, 0, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 19px; background-color: rgb(255, 51, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 19px; background-color: rgb(255, 102, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 19px; background-color: rgb(255, 153, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 19px; background-color: rgb(255, 204, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 19px; background-color: rgb(255, 255, 51);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 38px; background-color: rgb(255, 0, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 38px; background-color: rgb(255, 51, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 38px; background-color: rgb(255, 102, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 38px; background-color: rgb(255, 153, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 38px; background-color: rgb(255, 204, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 38px; background-color: rgb(255, 255, 102);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 57px; background-color: rgb(255, 0, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 57px; background-color: rgb(255, 51, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 57px; background-color: rgb(255, 102, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 57px; background-color: rgb(255, 153, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 57px; background-color: rgb(255, 204, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 57px; background-color: rgb(255, 255, 153);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 76px; background-color: rgb(255, 0, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 76px; background-color: rgb(255, 51, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 76px; background-color: rgb(255, 102, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 76px; background-color: rgb(255, 153, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 76px; background-color: rgb(255, 204, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 76px; background-color: rgb(255, 255, 204);">&nbsp;</div>
-				<div class="_tile" style="top: 0px; left: 95px; background-color: rgb(255, 0, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 19px; left: 95px; background-color: rgb(255, 51, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 38px; left: 95px; background-color: rgb(255, 102, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 57px; left: 95px; background-color: rgb(255, 153, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 76px; left: 95px; background-color: rgb(255, 204, 255);">&nbsp;</div>
-				<div class="_tile" style="top: 95px; left: 95px; background-color: rgb(255, 255, 255);">&nbsp;</div>
+			<div class="color-group">
+				<div><div class="unsel" style="background-color: rgb(255, 0, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 0, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 0, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 0, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 0, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 0, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 51, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 51, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 51, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 51, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 51, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 51, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 102, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 102, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 102, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 102, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 102, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 102, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 153, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 153, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 153, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 153, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 153, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 153, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 204, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 204, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 204, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 204, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 204, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 204, 255);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 255, 0);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 255, 51);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 255, 102);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 255, 153);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 255, 204);"></div></div>
+				<div><div class="unsel" style="background-color: rgb(255, 255, 255);"></div></div>
 			</div>
 		</div>
-		<hr class="space">
-		<input class="btn primary" type="submit" value="Submit">
 	</form>
 </div>
 

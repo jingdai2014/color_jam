@@ -5,12 +5,36 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, cod
     font-weight: normal;
     font-style: normal;
     font-size: 100%;
+    text-align: center;
     line-height: 1;
-    font-family: inherit;
+    font-family: 'Josefin Sans', sans-serif;
 }
 form {
     display: block;
     margin-top: 0em;
+}
+
+.uid-title {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.uid-box {
+    font-size: 20px;
+    font-weight: 400;
+    width: 200px;
+}
+
+.title-text {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.color-submit {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
 }
 
 .color-table > ._group > ._tile {
@@ -44,4 +68,55 @@ form {
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
+}
+
+.form {
+  width: 1300px;
+}
+
+.fields {
+    width: 300px;
+    float: right;
+}
+
+.colors {
+  width: 990px;
+  font-size: 0;
+  background: #FFFFFF;
+  float: left;
+}
+
+.colors > .color-group {
+  width: 330px;
+  font-size: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.colors > .color-group > div {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 2.5px;
+}
+
+.colors > .color-group > div > .unsel {
+  display: inline-block;
+  z-index: 1;
+  position: relative;
+  background-color: red;
+  outline: 1px solid black;
+  width: 50px;
+  height: 50px;
+}
+
+.colors > .color-group > div > .sel {
+  display: inline-block;
+  z-index: 10000;
+  background-color: red;
+  outline: 1px solid black;
+  width: 40px;
+  height: 40px;
+  margin: -10px;
 }
