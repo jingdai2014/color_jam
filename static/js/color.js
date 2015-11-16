@@ -41,5 +41,6 @@ $('.colors > .color-group > div > .unsel').on({
     })
     $(this).off('mouseleave');
     $('.color-text').text($(this).css("background-color"));
+    $('.logo > img').css('background-color', $(this).css("background-color"))
   }
 });
